@@ -1,0 +1,63 @@
+:root{
+    --first-circle-color: red;
+    --second-circle-color: yellow;
+    --third-circle-color: green;
+}
+
+.loader {
+    height: 2rem;
+    transform-origin: bottom center ;
+    animation: rotate 1.5s linear infinite ;
+}
+
+.circle{
+    display:inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    border: solid black 0.1px;
+    transform: scale(0.05);
+    animation: grow 2s linear infinite;
+    margin: -0.4rem;
+}
+.circle:nth-child(1){
+    background-color: var(--third-circle-color);
+    animation-delay: 1.9s;
+    margin-bottom: 4%;
+}
+
+.circle:nth-child(2){
+    background-color: var(--second-circle-color);
+    animation-delay: 1.2s;
+    margin-bottom: 8%;
+
+}
+.circle:nth-child(3){
+    background-color: var(--first-circle-color);
+    animation-delay: 0.6s;
+}
+
+@keyframes grow{
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes rotate{
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100vh;
+    margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
